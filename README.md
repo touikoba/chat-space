@@ -16,7 +16,7 @@
 |nickname|string|null: false, index: true|
 ### Association
 - has_many :tweets
-- has_many :groups_users
+- belongs_to :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|
@@ -24,7 +24,7 @@
 |name|string|null: false|
 ### Association
 - has_many :tweets
-- has_many :groups_users
+- belongs_to :groups_users
 
 ## tweetsテーブル
 |Column|Type|Options|
