@@ -6,19 +6,19 @@
     height: 100px;
     border: 1px solid hsl(0, 0%, 93%);
   }
-    .group-info__box {
+    &__box {
       height: 35px;
       position: static;
       margin-top: 35px;
     }
-      .group-info__box-name {
+      &-name {
         margin-left: 40px;
         top: 35px;
         color: #333333;
         font-size: 20px;
         float: left;
       }
-      .group-info__box-edit {
+      &-edit {
         line-height: 40px;
         margin-bottom: 20px;
         padding: 0 20px;
@@ -31,7 +31,7 @@
           text-decoration: none;
         }
       }
-    .group-info__box-member {
+    &__box-member {
     
       .group-info__box-member-list {
         font-size: 12px;
@@ -46,24 +46,24 @@
     width: calc(100vw - 300px);
     position: relative;
   
-    .message-list__info {
+    &__info {
       display: flex;
       padding: 45px 0 0 40px;
     }
-      .message-list__info-name {
+      &-name {
         color: #434a54;
         font-size: 16px;
         font-weight: bold;
         height: 35px;
       }
-      .message-list__info-date {
+      &-date {
         color: #999999;
         font-size: 12px;
         margin-left: 10px;
       }
-    .message-list__info-comments {
+    &__info-comments {
   
-      .message-list__info-comments-comment {
+      &-comment {
         color: #434A54;
         font-size: 14px;
         height: 46px;
@@ -77,13 +77,13 @@
     display: flex;
     position: relative;
   
-    .message-form-tweet {
+    &-tweet {
       padding-top: 35px;
       padding-left: 50px;
       width: 100%;
       color: #434a54;
     }
-    .message-form-photo {
+    &-photo {
       position: absolute;
       right: 170px;
       top: 30px;
@@ -94,7 +94,7 @@
 
       }
     }
-    .message-form-send {
+    &-send {
       margin-right: 40px;
       background-color: #38aef0;
       line-height: 40px;

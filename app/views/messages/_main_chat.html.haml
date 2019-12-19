@@ -33,8 +33,8 @@
     .message-form-tweet
       type a message
     .message-form-photo
-      %label{class: "input-box__image"}
-        %input.login-input-text{:name => "file", :type => "file"}/
+      %label.input-box__image
+        %input.login-input-text{:name : "file", :type : "file"}/
         = icon('fas', 'image')
     .message-form-send
       =link_to "Send", "#" 
