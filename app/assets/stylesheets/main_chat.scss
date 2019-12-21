@@ -1,0 +1,113 @@
+.main-chat {
+  float: right;
+  height: 300px;
+  .group-info {
+    background-color: #fff;
+    height: 100px;
+    border: 1px solid hsl(0, 0%, 93%);
+  }
+    &__box {
+      height: 35px;
+      position: static;
+      margin-top: 35px;
+    }
+      &-name {
+        margin-left: 40px;
+        top: 35px;
+        color: #333333;
+        font-size: 20px;
+        float: left;
+      }
+      &-edit {
+        line-height: 40px;
+        margin-bottom: 20px;
+        padding: 0 20px;
+        border: solid 1px #38aef0;
+        position: absolute;
+        text-decoration: none;
+        right: 40px;
+        top: 28px;
+        a {
+          text-decoration: none;
+        }
+      }
+    &__box-member {
+    
+      .group-info__box-member-list {
+        font-size: 12px;
+        color: #999999;
+        margin-left: 40px;
+        margin-top: 10px;
+      }
+    }
+  .message-list {
+    background-color: #fafafa;
+    height: calc(100vh - 190px);
+    width: calc(100vw - 300px);
+    position: relative;
+  
+    &__info {
+      display: flex;
+      padding: 45px 0 0 40px;
+    }
+      &-name {
+        color: #434a54;
+        font-size: 16px;
+        font-weight: bold;
+        height: 35px;
+      }
+      &-date {
+        color: #999999;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    &__info-comments {
+  
+      &-comment {
+        color: #434A54;
+        font-size: 14px;
+        height: 46px;
+        padding-left: 40px;
+      }
+    }
+  }
+  .message-form {
+    background-color: #d2d2d2;
+    height: 90px;
+    display: flex;
+    position: relative;
+  
+    &-tweet {
+      padding-top: 35px;
+      padding-left: 50px;
+      width: 100%;
+      color: #434a54;
+    }
+    &-photo {
+      position: absolute;
+      right: 170px;
+      top: 30px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      .login-input-text{
+        display: none;
+
+      }
+    }
+    &-send {
+      margin-right: 40px;
+      background-color: #38aef0;
+      line-height: 40px;
+      padding: 5px 30px;
+      color: white;
+      border: solid 1px #38aef0;
+      right: 10px;
+      top: 20px;
+      position: absolute;
+
+      a{
+        text-decoration: none;
+      }
+    }
+  }
+}
