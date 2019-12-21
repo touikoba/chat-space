@@ -5,12 +5,12 @@
     background-color: #fff;
     height: 100px;
     border: 1px solid hsl(0, 0%, 93%);
-  }
+  
     &__box {
       height: 35px;
       position: static;
       margin-top: 35px;
-    }
+    
       &-name {
         margin-left: 40px;
         top: 35px;
@@ -31,15 +31,17 @@
           text-decoration: none;
         }
       }
+    }
     &__box-member {
     
-      .group-info__box-member-list {
+      &-list {
         font-size: 12px;
         color: #999999;
         margin-left: 40px;
         margin-top: 10px;
       }
     }
+  }
   .message-list {
     background-color: #fafafa;
     height: calc(100vh - 190px);
@@ -67,6 +69,7 @@
         color: #434A54;
         font-size: 14px;
         height: 46px;
+        padding: 10px;
         padding-left: 40px;
       }
     }
