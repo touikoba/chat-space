@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
+  protect_from_forgery
+  def new
+
+  end
 
   def edit
+
   end
 
   def update

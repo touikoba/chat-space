@@ -33,12 +33,12 @@
       }
     }
     &__box-member {
-    
       &-list {
         font-size: 12px;
         color: #999999;
         margin-left: 40px;
         margin-top: 10px;
+        list-style: none;
       }
     }
   }
@@ -81,23 +81,26 @@
     position: relative;
   
     &-tweet {
-      padding-top: 35px;
+      padding-top: 30px;
       padding-left: 50px;
-      width: 100%;
+      width: 670px;
       color: #434a54;
+      .form__message {
+        width: 100%;
+      }
     }
     &-photo {
       position: absolute;
-      right: 170px;
+      right: 200px;
       top: 30px;
       font-size: 1.3rem;
       cursor: pointer;
-      .login-input-text{
+      .hidden {
         display: none;
-
       }
     }
     &-send {
+      .form__submit {
       margin-right: 40px;
       background-color: #38aef0;
       line-height: 40px;
@@ -107,7 +110,7 @@
       right: 10px;
       top: 20px;
       position: absolute;
-
+      }
       a{
         text-decoration: none;
       }
