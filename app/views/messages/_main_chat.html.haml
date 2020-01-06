@@ -3,12 +3,14 @@
     .group-info__box
       %ul.group-info__box
         %li.group-info__box-name
-          ds
+          = @group.name
         .group-info__box-edit
-          =link_to "Edit", "#" 
+          =link_to "Edit", edit_group_path(@group.id)
       %ul.group-info__box-member
+      - @group.users.each do |user|
         %li.group-info__box-member-list
-          Member : とーい 
+          Member : 
+          =user.name
 
   .message-list
     %ul.message-list__info
@@ -28,13 +30,15 @@
     %ul.message-list__info-comments
       %li.message-list__info-comments-comment
         yoro
-
+      
   .message-form
-    .message-form-tweet
-      type a message
-    .message-form-photo
-      %label.input-box__image
-        %input.login-input-text{name: "file", type: "file"}/
-        = icon('fas', 'image')
-    .message-form-send
-      =link_to "Send", "#" 
+    = form_for [@group, @message] do |f|
+      .message-form-tweet
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .message-form-photo
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      .message-form-send
+        = f.submit 'Send', class: 'form__submit'
+
