@@ -13,23 +13,24 @@
           =user.name
 
   .message-list
-    %ul.message-list__info
-      %li.message-list__info-name
-        とーい
-      %li.message-list__info-date
-        2019/12/17(Tue) 14:15:22
-    %ul.message-list__info-comments
-      %li.message-list__info-comments-comment
-        よろ
+    = render @messages
+    -# %ul.message-list__info
+    -#   %li.message-list__info-name
+    -#     とーい
+    -#   %li.message-list__info-date
+    -#     2019/12/17(Tue) 14:15:22
+    -# %ul.message-list__info-comments
+    -#   %li.message-list__info-comments-comment
+    -#     よろ
         
-    %ul.message-list__info
-      %li.message-list__info-name
-        とーい
-      %li.message-list__info-date
-        2019/12/17(Tue) 14:15:22
-    %ul.message-list__info-comments
-      %li.message-list__info-comments-comment
-        yoro
+    -# %ul.message-list__info
+    -#   %li.message-list__info-name
+    -#     とーい
+    -#   %li.message-list__info-date
+    -#     2019/12/17(Tue) 14:15:22
+    -# %ul.message-list__info-comments
+    -#   %li.message-list__info-comments-comment
+    -#     yoro
       
   .message-form
     = form_for [@group, @message] do |f|
@@ -41,4 +42,3 @@
           = f.file_field :image, class: 'hidden'
       .message-form-send
         = f.submit 'Send', class: 'form__submit'
-
