@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 20191223095818) do
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token",   default: "", null: false
-    t.datetime "reset_password_sent_at",              null: false
-    t.datetime "remember_created_at",                 null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
