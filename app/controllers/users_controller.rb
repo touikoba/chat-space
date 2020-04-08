@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  protect_from_forgery
+  # protect_from_forgery
   def index
     return nil if params[:keyword] == ""
     @users = User.where(['name LIKE ?', "%#{params[:keyword]}%"] ).where.not(id: current_user.id).limit(10)

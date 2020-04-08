@@ -14,23 +14,21 @@
 
   .message-list
     = render @messages
-    -# %ul.message-list__info
-    -#   %li.message-list__info-name
-    -#     とーい
-    -#   %li.message-list__info-date
-    -#     2019/12/17(Tue) 14:15:22
-    -# %ul.message-list__info-comments
-    -#   %li.message-list__info-comments-comment
-    -#     yoro
+
       
   .message-form
     = form_for [@group, @message] do |f|
       .message-form-tweet
         = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      .message-form-photo
         = f.label :image, class: 'form__mask__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-      .message-form-send
-        = f.submit 'Send', class: 'form__submit'
+      = f.submit 'Send', class: 'form__submit'
           
+    -# = form_for [@group, @message] do |f|
+    -#   = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+    -#   .message-form-photo
+    -#     = f.label :image, class: 'form__mask__image' do
+    -#       = icon('fas', 'image', class: 'icon')
+    -#       = f.file_field :image, class: 'hidden'
+    -#   = f.submit 'Send', class: 'form__submit'

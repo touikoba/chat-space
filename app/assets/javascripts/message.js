@@ -5,16 +5,16 @@ $(function(){
     if (message.content && message.image) {
       //data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=${message.id}> 
-        <div class="upper-message">
-          <div class="upper-message__user-name">
+        <div class="message-list__info">
+          <div class="message-list__info-name">
             ${message.user_name} 
           </div>
-          <div class="upper-message__date">
+          <div class="message-list__info-date">
             ${message.created_at} 
           </div>
         </div>
-        <div class="lower-message">
-          <p class="lower-message__content">
+        <div class="message-list__info-comments">
+          <p class="message-list__info-comments-content">
             ${message.content} 
           </p>
           <img src="  message.image  " class="lower-message__image" >
@@ -23,16 +23,16 @@ $(function(){
     } else if (message.content) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=${message.id}>
-        <div class="upper-message">
-          <div class="upper-message__user-name"> 
+        <div class="message-list__info">
+          <div class="message-list__info-name"> 
             ${message.user_name} 
           </div>
-          <div class="upper-message__date">
+          <div class="message-list__info-date">
             ${message.created_at}
           </div>
         </div>
-        <div class="lower-message">
-          <p class="lower-message__content">
+        <div class="message-list__info-comments">
+          <p class="message-list__info-comments-comment">
             ${message.content}
           </p>
         </div>
@@ -40,15 +40,15 @@ $(function(){
     } else if (message.image) {
       //同様に、data-idが反映されるようにしている
       var html = `<div class="message" data-message-id=${message.id}>
-        <div class="upper-message">
-          <div class="upper-message__user-name">
+        <div class="message-list__info">
+          <div class="message-list__info-name">
             ${message.user_name}
           </div>
-          <div class="upper-message__date">
+          <div class="message-list__info-date">
             ${message.created_at}
           </div>
         </div>
-        <div class="lower-message">
+        <div class="message-list__info-comments">
           <img src=" message.image " class="lower-message__image" >
         </div>
       </div>`
@@ -58,6 +58,7 @@ $(function(){
  
 
 $('#new_message').on('submit', function(e){
+  console.log("new")
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action')
@@ -70,9 +71,18 @@ $('#new_message').on('submit', function(e){
     contentType: false
   })
     .done(function(data){
+      console.log("done")
       var html = buildHTML(data);
-      $('.messages').append(html);      
+      $('.message-list').append(html);      
       $('form')[0].reset();
+      $('.message-list').animate({ scrollTop: $('.message-list')[0].scrollHeight});
+    })
+    // 失敗した時の動作  
+    .fail(function() {
+      alert("メッセージ送信に失敗しました");
+    })
+    .always(function(){
+      $(".form__submit").prop('disabled', false);
     });
   })
 
@@ -109,6 +119,7 @@ $('#new_message').on('submit', function(e){
       alert('error');
     });
   };
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
   setInterval(reloadMessages, 7000);
-
+  };
 });
