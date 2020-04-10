@@ -49,7 +49,7 @@ $(function(){
           </div>
         </div>
         <div class="message-list__info-comments">
-          <img src=" message.image " class="lower-message__image" >
+          <img src="${message.image}" class="lower-message__image" >
         </div>
       </div>`
     };
