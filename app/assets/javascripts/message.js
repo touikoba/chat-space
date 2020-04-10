@@ -1,5 +1,5 @@
 $(function(){ 
-  var last_message_id = $('.message:last').data("message-id");
+ 
 
   var buildHTML = function(message) {
     if (message.content && message.image) {
@@ -17,7 +17,7 @@ $(function(){
           <p class="message-list__info-comments-content">
             ${message.content} 
           </p>
-          <img src="  message.image  " class="lower-message__image" >
+          <img src=" ${message.image} " class="lower-message__image" >
         </div>
       </div>`
     } else if (message.content) {
@@ -58,7 +58,6 @@ $(function(){
  
 
 $('#new_message').on('submit', function(e){
-  console.log("new")
   e.preventDefault();
   var formData = new FormData(this);
   var url = $(this).attr('action')
@@ -71,7 +70,6 @@ $('#new_message').on('submit', function(e){
     contentType: false
   })
     .done(function(data){
-      console.log("done")
       var html = buildHTML(data);
       $('.message-list').append(html);      
       $('form')[0].reset();
@@ -103,6 +101,7 @@ $('#new_message').on('submit', function(e){
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      
       if (messages.length !== 0) {
       //追加するHTMLの入れ物を作る
         var insertHTML = '';
